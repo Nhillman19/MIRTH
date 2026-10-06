@@ -1,0 +1,36 @@
+Package: MIRTH
+Type: Package
+Title: Multiple Imputation for Removing Technical Heterogeneity
+Version: 0.1.0
+Authors@R:
+    person("Noah", "Hillman", email = "Noah.Hillman@pennmedicine.upenn.edu", role = c("aut", "cre"))
+Description: Integrates ComBat-style harmonization of multi-site imaging
+    features into machine-learning pipelines. The
+    harmonization model is fit on training data and applied to the held-out test set when generating predictions. Outcomes (and any missing
+    covariates) in new data are multiply imputed with 'mice', with each imputed data
+    set being harmonized with the training-set batch-effect estimates. Predictions from a 'caret' model are generated on each imputed data set and pooled across imputations. Supports
+    continuous, binary, and multi-class outcomes, and user-supplied harmonization methods. Options for harmonizing data with unseen sites in the test set are experimental and should be 
+    performed cautiously. 
+License: MIT + file LICENSE
+URL: https://github.com/Nhillman19/MIRTH
+BugReports: https://github.com/Nhillman19/MIRTH/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1.0)
+Imports:
+    caret,
+    ComBatFamily,
+    mice,
+    pROC,
+    randomForest,
+    ranger,
+    stats,
+    utils,
+    withr
+Suggests:
+    mgcv
+Remotes:
+    andy1764/ComBatFamily
+Config/testthat/edition: 3
