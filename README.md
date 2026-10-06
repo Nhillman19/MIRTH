@@ -24,6 +24,7 @@ which is installed automatically from GitHub:
 ```r
 # install.packages("remotes")
 remotes::install_github("Nhillman19/MIRTH")
+library(MIRTH)
 ```
 
 ## Quick start
